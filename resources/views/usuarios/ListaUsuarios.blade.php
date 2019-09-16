@@ -23,6 +23,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
       <div class="container">
+        <div class="row">
+        <div class="col-sm-12">
         <br>
         <h4>Lista de usuários ativos </h4> <br>
         <a class="btn btn-success" href="{{url('CadastrarUsuario')}}">Cadastrar usuário</a><br><br>
@@ -37,7 +39,7 @@
 
             if(confirma){
 
-              var rota = "{{url('/')}}";
+              var rota = "{{url('/DeleteUser')}}";
 
             	window.location.href = rota+'/'+id+'';
 
@@ -73,7 +75,7 @@
                       type:'POST',
                       data:{
                           pesquisa:pesquisa,
-                          _token:'{{csrf_token()}}' // token laravel teste 
+                          _token:'{{csrf_token()}}' // token laravel teste
                       },
                       success:function(response){
                         console.log(response);
@@ -83,7 +85,7 @@
 
                         var rota = "{{url('EditUser')}}/";
 
-                        var id =  value.id;
+                        var id =  value.id;<td>9e0-40320-4923n0-940-392-43-n -=-30=-403-=20423 =-403-=204=-230=</td>
 
                         var rotaid = rota + id;
 
@@ -98,26 +100,32 @@
               });
           </script>
           <br><br>
-        <table class="table">
-            <thead>
-              <th>Nome</th>
-              <th>Email</th>
-              <th>Telefone</th>
-                <th>Editar</th>
-                <th>Deletar</th>
-            </thead>
-            <tbody>
-              @foreach($cadastrados as $usuario)
-              <tr>
-                <td>{{$usuario->nome}}</td>
-                <td>{{$usuario->email}}</td>
-                <td>{{$usuario->telefone}}</td>
-                <td><a href='{{url("EditUser/$usuario->id")}}'>Editar</a></td>
-                <td> <button type="button" onclick='deleta({{$usuario->id}})' class="btn btn-danger">Tchau</button></td>
-              </tr>
-              @endforeach
-            </tbody>
-        </table>
+
+          <table class="table table-hover">
+              <thead>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                  <th>Editar</th>
+                  <th>Deletar</th>
+              </thead>
+              <tbody>
+                @foreach($cadastrados as $usuario)
+                <tr>
+                  <td>{{$usuario->nome}}</td>
+                  <td>{{$usuario->email}}</td>
+                  <td>{{$usuario->telefone}}</td>
+                  <td><a href='{{url("EditUser/$usuario->id")}}'>Editar</a></td>
+                  <td> <button type="button" onclick='deleta({{$usuario->id}})' class="btn btn-danger">Tchau</button></td>
+                </tr>
+                @endforeach
+              </tbody>
+          </table>
+
+
+      </div>
+
+      </div>
 
       </div>
 

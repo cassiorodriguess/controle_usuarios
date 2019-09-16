@@ -89,7 +89,7 @@ class usuarioController extends Controller
     public function edit($id)
     {
         $useredit = $this->usuario
-        ->find($id)
+        ->find($id);
 
         return view ('usuarios.Cadastro',compact('useredit'));
     }

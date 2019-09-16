@@ -12,6 +12,11 @@
 
       <div class="container">
 
+        <div class="row">
+
+          <div class="col-sm-12">
+
+
         <br><br>
 
           @if (session('sucesso'))
@@ -48,8 +53,8 @@
           @endphp
           <br>
           <a class="btn btn-lg btn-warning" href="{{url('/ListaUsuarios')}}">Voltar a lista</a>
-
-          <form class="form-horizontal col-sm-5 offset-4" action="{{url('/CadastroUsuarios')}}" method="post">
+          <br><br>
+          <form class="form-horizontal" action="{{url('/CadastroUsuarios')}}" method="post">
           <h2 class="">Cadastre-se</h2>
           @else
             @php
@@ -57,7 +62,7 @@
               $email = $useredit->email;
               $telefone = $useredit->telefone;
             @endphp
-          <form class="form-horizontal col-sm-5 offset-4" action='{{url("/AtualizaUsuario/$useredit->id")}}' method="post">
+          <form class="form-horizontal col-sm-5 offset-1" action='{{url("/AtualizaUsuario/$useredit->id")}}' method="post">
           <h2 class="">Atualize seu cadastro</h2>
           @endif
           {!! csrf_field() !!}
@@ -74,6 +79,8 @@
           <div class="form-group">
               <input type="password" class="form-control" name="senha" placeholder="*******" value="">
           </div>
+
+          <br>
 
           @if(isset($useredit))
 
@@ -92,6 +99,10 @@
         </form>
 
       </div>
+
+      </div>
+
+    </div>
 
 
   </body>
