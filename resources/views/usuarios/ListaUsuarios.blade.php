@@ -73,7 +73,7 @@
                       type:'POST',
                       data:{
                           pesquisa:pesquisa,
-                          _token:'{{csrf_token()}}'
+                          _token:'{{csrf_token()}}' // token laravel
                       },
                       success:function(response){
                         console.log(response);
